@@ -1,31 +1,33 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package k1mainapp;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import jsonHandeling.implementation;
+import jsonHandeling.lib;
 
-/**
- *
- * @author ahmad
- */
 public class FXMLDocumentController implements Initializable {
-    
+
+    lib readFile;
+
     @FXML
     private Label label;
-    
-    
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        // set File Name 
+        lib lib = new implementation();
+        try {
+            lib.returnJsonAsString("./src/newjson.json");
+            label.setText(String.valueOf(lib.getSpecificInt("age")));
+        } catch (Exception ex) {
+            
+        }
+
+    }
+
 }

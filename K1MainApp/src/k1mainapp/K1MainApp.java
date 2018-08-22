@@ -5,13 +5,14 @@
  */
 package k1mainapp;
 
-import java.io.File;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import jsonHandeling.implementation;
+import jsonHandeling.lib;
 
 /**
  *
@@ -31,9 +32,10 @@ public class K1MainApp extends Application {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
+     * @throws java.lang.Exception
      */
-    public static void main(String[] args) throws IOException {
-        System.out.println("Present Project Directory : " + System.getProperty("user.dir"));
+    public static void main(String[] args) throws IOException, Exception {
         launch(args);
     }
 

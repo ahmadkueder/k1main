@@ -8,33 +8,63 @@ package k1mainapp;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-/**
- *
- * @author ahmad
- */
 public class K1MainApp extends Application {
-
+    
     @Override
     public void start(Stage stage) throws Exception {
+        
+        Screen screen = Screen.getPrimary();
+        Rectangle2D bounds = screen.getVisualBounds();
+        
+        
+        stage.setTitle("Ahmad");
+        
+        
+        stage.setX(bounds.getMinX());
+        stage.setY(bounds.getMinY());
+        stage.setWidth(bounds.getWidth());
+        stage.setHeight(bounds.getHeight());
+        
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-
-        Scene scene = new Scene(root);
-
+        
+        AnchorPane left = new AnchorPane();
+        left.setScaleX(100);
+        left.setScaleY(200);
+        
+        Scene scene = new Scene(root, 1024, 800);
+        
         stage.setScene(scene);
         stage.show();
     }
-
-    /**
-     * @param args the command line arguments
-     * @throws java.io.IOException
-     * @throws java.lang.Exception
-     */
+    
     public static void main(String[] args) throws IOException, Exception {
+        
         launch(args);
+        
     }
 
+// return grid pane
+    public GridPane gridDes() {
+        GridPane grid = new GridPane();
+        grid.setAlignment(Pos.CENTER);
+        grid.setVgap(10);
+        grid.setHgap(10);
+        
+        for (int i = 0; i < 50; i++) {
+            grid.add(new Button("sss"), 0, i);
+        }
+        
+        return grid;
+    }
+    
 }

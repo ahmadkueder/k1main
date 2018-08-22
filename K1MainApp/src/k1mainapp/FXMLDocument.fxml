@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="800.0" prefWidth="1024.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/10.0.1" fx:controller="k1mainapp.FXMLDocumentController">
-   <children>
-      <Label fx:id="label" layoutX="271.0" layoutY="105.0" text="Label" />
-   </children>
-</AnchorPane>
+<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="771.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="k1mainapp.FXMLDocumentController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <Button layoutX="125.0" layoutY="372.0" mnemonicParsing="false" text="Button" AnchorPane.bottomAnchor="365.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="372.0" />
+         </children></AnchorPane>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="400.0" />
+  </items>
+</SplitPane>

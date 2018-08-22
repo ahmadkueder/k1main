@@ -1,0 +1,26 @@
+{
+    "mainSceneItems": {
+        "Buttons": [
+            {
+                "name" : "",
+                "id" : ""
+            }
+        ],
+        ""  : ""
+    },
+    "databaseStroktur": {
+        "databasName": "",
+        "tables": [{
+            "tableName": "",
+            "columns": {
+                "id": {
+                    "type": "",
+                    "length": "",
+                    "addtional": ""
+                }
+            }
+        }]
+
+
+    }
+}

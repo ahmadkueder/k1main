@@ -2,8 +2,6 @@ package k1mainapp;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -22,8 +20,8 @@ public class FXMLDocumentController implements Initializable {
         // set File Name 
         lib lib = new implementation();
         try {
-            lib.returnJsonAsString("./src/newjson.json");
-            label.setText(String.valueOf(lib.getSpecificInt("age")));
+            lib.returnJsonAsString("./src/USAG/Stroktur.json");
+            label.setText(String.valueOf(lib.getSpecificArray("columns").length()));
         } catch (Exception ex) {
             
         }

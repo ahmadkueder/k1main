@@ -8,7 +8,7 @@ bin
 gen
 build
 out
-lib
+lib_
 
 target
 pom.xml.*

@@ -5,6 +5,8 @@
  */
 package k1mainapp;
 
+import USAG.propsHandel;
+import static USAG.propsHandel.getProp;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -33,6 +35,10 @@ public class K1MainApp extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+        
+
+        
+        
         setStage(stage);
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();

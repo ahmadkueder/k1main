@@ -21,25 +21,25 @@ public class topBtnsFunctions implements topBtnsFunctionsInterFace {
 
     @Override
     public void productsMange(Button thisBtn) {
-
+        leftSection.setContent(this.invokeMethodLeftSections(thisBtn.getId()));
     }
 
     @Override
     public void werehouseMange(Button thisBtn) {
-
+        leftSection.setContent(this.invokeMethodLeftSections(thisBtn.getId()));
     }
 
     // Section geter
     public VBox invokeMethodLeftSections(String sectionToCall) {
         Class clas;
         try {
-            clas = Class.forName("sections.leftSectionFunctions");
+            clas = Class.forName("sections.leftBtns");
 
             Object instance = clas.newInstance();
 
-            Method method = clas.getDeclaredMethod(sectionToCall);
-            
-            return (VBox) method.invoke(instance);
+            Method method = clas.getDeclaredMethod("printLeftSectionBtns" , String.class);
+
+            return (VBox) method.invoke(instance, sectionToCall);
 
         } catch (ClassNotFoundException | IllegalAccessException
                 | InstantiationException
@@ -47,7 +47,7 @@ public class topBtnsFunctions implements topBtnsFunctionsInterFace {
             System.out.println("IllegalArgumentException : " + this.getClass().getName() + " -- " + e.getMessage());
 
         }
-        return new VBox(new Button("tt"));
+        return null;
     }
 
 }

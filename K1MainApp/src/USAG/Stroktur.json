@@ -26,19 +26,54 @@
     "leftSectionItems": {
         "userMang": {
             "sectionType": "",
-            "items": {
-            }
+            "items": [
+                {
+                    "name": "",
+                    "id": "addUser",
+                    "listinerName": "",
+                    "icon": "PLUS"
+                },
+                {
+                    "name": "",
+                    "id": "existingUser",
+                    "listinerName": "",
+                    "icon": "LIST_ALT"
+                }, 
+                {
+                    "name": "",
+                    "id": "setingUsers",
+                    "listinerName": "",
+                    "icon": "GEARS"
+                }
+            ]
         },
         "productsMange": {
             "sectionType": "",
-            "items": {
-            }
-        }
-        ,
+            "items": [
+                {
+                    "name": "",
+                    "id": "",
+                    "listinerName": "",
+                    "icon": "PLUS"
+                }
+            ]
+        },
         "werehouseMange": {
             "sectionType": "",
-            "items": {
-            }
+            "items": [
+                {
+                    "name": "",
+                    "id": "addWerehouse",
+                    "listinerName": "",
+                    "icon": "PLUS"
+                },
+                {
+                    "name": "",
+                    "id": "",
+                    "listinerName": "",
+                    "icon": "PLUS"
+                }
+            ]
         }
     },
     "databaseStroktur": {

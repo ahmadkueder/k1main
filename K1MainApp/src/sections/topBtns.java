@@ -1,5 +1,6 @@
 package sections;
 
+import static USAG.propsHandel.getProp;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.lang.reflect.InvocationTargetException;
@@ -22,7 +23,7 @@ public class topBtns {
 
     HBox hbox;
     lib jsonHand;
-    final String JSONfilePath = "./src/USAG/Stroktur.json";
+    final String JSONfilePath = getProp("jsonFilePath");
 
     public HBox printTopElements() throws ClassNotFoundException,
             NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {

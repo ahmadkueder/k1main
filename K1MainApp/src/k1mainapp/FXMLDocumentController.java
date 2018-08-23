@@ -29,11 +29,8 @@ public class FXMLDocumentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
         try {
-
             topBtnsContainer.setContent(new topBtns().printTopElements());
-
         } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
                 | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);

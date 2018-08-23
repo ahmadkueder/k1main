@@ -4,10 +4,10 @@ import javafx.scene.layout.VBox;
 
 public interface leftSectionFunctionsInterface {
 
-    public VBox userMang();
+    public VBox userMang(String fromTopsBtns);
 
-    public VBox productsMange();
+    public VBox productsMange(String fromTopsBtns);
 
-    public VBox werehouseMange();
+    public VBox werehouseMange(String fromTopsBtns);
 
 }

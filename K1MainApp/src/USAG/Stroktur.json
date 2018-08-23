@@ -2,25 +2,56 @@
     "mainSceneItems": {
         "Buttons": [
             {
-                "name" : "",
-                "id" : ""
+                "name": "Users Managment",
+                "id": "userMang",
+                "listenerName": "userMang",
+                "icon": "USER"
+            },
+            {
+                "name": "Products Managment",
+                "id": "productsMange",
+                "listenerName": "productsMange",
+                "icon": "SHOPPING_CART"
+            },
+            {
+                "name": "Werehouse Managment",
+                "id": "werehouseMange",
+                "listenerName": "werehouseMange",
+                "icon": "HOME"
             }
+
         ],
-        ""  : ""
+        "": ""
+    },
+    "leftSectionItems": {
+        "userMang": {
+            "sectionType": "",
+            "items": {
+            }
+        },
+        "productsMange": {
+            "sectionType": "",
+            "items": {
+            }
+        }
+        ,
+        "werehouseMange": {
+            "sectionType": "",
+            "items": {
+            }
+        }
     },
     "databaseStroktur": {
         "databasName": "",
         "tables": [{
-            "tableName": "",
-            "columns": {
-                "id": {
-                    "type": "",
-                    "length": "",
-                    "addtional": ""
+                "tableName": "",
+                "columns": {
+                    "id": {
+                        "type": "",
+                        "length": "",
+                        "addtional": ""
+                    }
                 }
-            }
-        }]
-
-
+            }]
     }
 }

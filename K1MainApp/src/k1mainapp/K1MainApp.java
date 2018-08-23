@@ -20,20 +20,31 @@ import javafx.stage.Stage;
 
 public class K1MainApp extends Application {
     
+    static Stage stage;
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        K1MainApp.stage = stage;
+    }
+
+    
     @Override
     public void start(Stage stage) throws Exception {
-        
+        setStage(stage);
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
         
         
         stage.setTitle("Ahmad");
+
         
-        
-        stage.setX(bounds.getMinX());
-        stage.setY(bounds.getMinY());
-        stage.setWidth(bounds.getWidth());
-        stage.setHeight(bounds.getHeight());
+//        stage.setX(bounds.getMinX());
+//        stage.setY(bounds.getMinY());
+//        stage.setWidth(bounds.getWidth());
+//        stage.setHeight(bounds.getHeight());
         
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
         
@@ -41,7 +52,7 @@ public class K1MainApp extends Application {
         left.setScaleX(100);
         left.setScaleY(200);
         
-        Scene scene = new Scene(root, 1024, 800);
+        Scene scene = new Scene(root);
         
         stage.setScene(scene);
         stage.show();

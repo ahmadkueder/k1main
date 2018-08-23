@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-<SplitPane dividerPositions="0.29797979797979796" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="771.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="k1mainapp.FXMLDocumentController">
-  <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
-         <children>
-            <Button layoutX="125.0" layoutY="372.0" mnemonicParsing="false" text="Button" AnchorPane.bottomAnchor="365.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="372.0" />
-         </children></AnchorPane>
-      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="400.0" />
-  </items>
-</SplitPane>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="k1mainapp.FXMLDocumentController">
+   <children>
+      <BorderPane fx:id="complettBorderPane" prefHeight="600.0" prefWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <ScrollPane id="topMenuBar" fx:id="topBtnsContainer" blendMode="SRC_ATOP" cacheShape="false" centerShape="false" focusTraversable="false" scaleShape="false" stylesheets="@../assets/topSectonStyle.css" BorderPane.alignment="CENTER" />
+         </top>
+         <left>
+            <ScrollPane fx:id="leftSection" prefHeight="564.0" prefWidth="162.0" BorderPane.alignment="CENTER" />
+         </left>
+         <center>
+            <AnchorPane fx:id="ancg" prefHeight="459.0" prefWidth="53.0" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

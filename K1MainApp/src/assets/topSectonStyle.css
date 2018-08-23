@@ -1,0 +1,15 @@
+
+
+#topMenuBar{
+    -fx-alignment:CENTER;
+    -fx-font-color : blue;
+}
+#topHbox{
+
+
+}
+
+.glyph-icon {
+  -fx-font-size: 25px;
+  -fx-font-family: "FontAwesome"; /* or Material Design Icons*/
+}

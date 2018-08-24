@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="userMang.AddUserController">
+   <children>
+      <VBox AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Grundinformation" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
+               <children>
+                  <VBox minHeight="-Infinity" spacing="5.0">
+                     <children>
+                        <Text stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="Vorname">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="300.0" maxWidth="300.0" prefWidth="400.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="487.0" layoutY="20.0" minHeight="-Infinity" spacing="5.0">
+                     <children>
+                        <Text strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="Nachname">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="300.0" maxWidth="300.0" prefWidth="400.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="665.0" layoutY="20.0" minHeight="-Infinity" spacing="5.0">
+                     <children>
+                        <Text strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="Personal Adress">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="300.0" maxWidth="300.0" prefWidth="400.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="592.0" layoutY="20.0" minHeight="-Infinity" spacing="5.0">
+                     <children>
+                        <Text strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="Benutzer Sprache">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <ComboBox prefWidth="300.0" />
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <Text layoutX="20.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kontakt Informationen" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="46.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="47.0" prefWidth="500.0" spacing="5.0">
+                     <children>
+                        <Text stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="Handynummer">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="500.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="20.0" layoutY="20.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefWidth="500.0" spacing="5.0">
+                     <children>
+                        <Text stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="Benutzer E-mail">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="500.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Text layoutX="10.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verwaltungs informationen" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="149.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" spacing="5.0">
+                     <children>
+                        <Text stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="Benutzer-Rolle">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="500.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="20.0" layoutY="20.0" minHeight="-Infinity" spacing="5.0">
+                     <children>
+                        <Text stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="protzent">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="500.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="252.0" spacing="10.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" spacing="5.0">
+                     <children>
+                        <Text stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="Password">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="500.0" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="20.0" layoutY="20.0" minHeight="-Infinity" spacing="5.0">
+                     <children>
+                        <Text stroke="BLACK" strokeLineCap="ROUND" strokeLineJoin="BEVEL" strokeType="INSIDE" strokeWidth="0.0" text="rePassword">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefWidth="500.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

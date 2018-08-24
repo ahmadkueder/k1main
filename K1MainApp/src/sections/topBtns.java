@@ -5,9 +5,7 @@ import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -108,7 +106,7 @@ public class topBtns {
             JSONArray btns = mainScenItems.getJSONArray("Buttons");
             returned = btns;
         } catch (Exception ex) {
-            System.out.println("erorr read JSON file path");
+            System.out.println("erorr read JSON file path - Class Name : "  + getClass().getName() + ex.getMessage());
         }
 
         return returned;

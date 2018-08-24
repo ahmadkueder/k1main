@@ -9,10 +9,9 @@ public class propsHandel {
     public static String getProp(String keyName) {
         Properties prop = new Properties();
         try {
-            FileInputStream output = new FileInputStream("src/USAG/staticValues.properties");
-            prop.load(output);
-
-            
+            try (FileInputStream output = new FileInputStream("src/USAG/staticValues.properties")) {
+                prop.load(output);
+            }
             return prop.getProperty(keyName);
         } catch (IOException ex) {
             System.out.println("erorr prop file not found : " + ex.getMessage());

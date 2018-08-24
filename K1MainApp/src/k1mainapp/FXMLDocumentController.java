@@ -25,7 +25,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ScrollPane leftSection;
     @FXML
-    private AnchorPane ancg;
+    private AnchorPane center;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

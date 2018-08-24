@@ -1,7 +1,7 @@
 .leftBtns{
 
-    -fx-padding : 5px;
-    -fx-pref-width : 30;
+    -fx-padding : 10px;
+    -fx-pref-width : 40;
     -fx-pref-height : 30;
     -fx-font-family: "FontAwesome"; /* or Material Design Icons*/
     -fx-alignment: CENTER;
@@ -10,7 +10,11 @@
 .glyph-icon {
   -fx-font-size: 15px;
   -fx-font-family: "FontAwesome"; /* or Material Design Icons*/
-}.leftBtns{
-    -fx-background-color: red;
-    
+
 }
+
+.leftBtns{
+
+      -fx-background-color: #4b1efc;
+}
+

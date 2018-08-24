@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -16,13 +14,12 @@
             <left>
                 <ScrollPane fx:id="leftSection" fitToHeight="true" stylesheets="@../assets/leftSectionStylesheet.css" BorderPane.alignment="CENTER" />
             </left>
-            <center>
-                <AnchorPane fx:id="ancg" prefHeight="459.0" prefWidth="53.0" BorderPane.alignment="CENTER">
-                </AnchorPane>
-            </center>
             <bottom>
                 <HBox prefHeight="0.0" BorderPane.alignment="CENTER" />
             </bottom>
+         <center>
+            <AnchorPane fx:id="center" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+         </center>
         </BorderPane>
     </children>
 </AnchorPane>

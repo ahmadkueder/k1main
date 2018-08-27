@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+
+        <script src="assets/jquery/jquery-3.3.1.js"></script>
+
+
+    </head>
+
+    <body>
+        <div class="container-fluid p-3" id="wholeContainer">
+
+
+            <div class="container-fluid" id="mainContainerOfAddUserForm" style=" margin: auto;">
+
+                <h3>Grundinformation</h3>
+                <div class="row" id="besicsUsersInformation">
+
+                    <!--
+                    User NAme
+                    user Lastname
+                    user user Address
+                    user LAnguage
+                    -->
+                    <div class=" col-sm">
+                        <div class="form-group">
+                            <label class="control-label requiredField" for="item_name">
+                                Name
+                                <span style="color: red;" class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <input isfill="false" class="form-control" id="user_lastname" name="addUserForm" placeholder="" list="datalist_user_lastname"
+                                   type="text" value="">
+                            <datalist id="datalist_user_lastname">
+
+                            </datalist>
+                            <span style="color: #999999;" class="help-block" id="hint_item_name">
+                            </span>
+                            <span style="color:#ed4b4b" id="MSG_user_lastname" class="MSG_user_lastname"></span>
+                        </div>
+                    </div>
+                    <div class=" col-sm">
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="item_name">
+                                Nachname
+                                <span style="color: red;" class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <input isfill="false" class="form-control" id="user_name" name="addUserForm" placeholder="" list="datalist_user_name" type="text"
+                                   value="">
+                            <datalist id="datalist_user_name">
+
+                            </datalist>
+                            <span style="color: #999999;" class="help-block" id="hint_item_name">
+                            </span>
+                            <span style="color:#ed4b4b" id="MSG_user_name" class="MSG_user_name"></span>
+                        </div>
+                    </div>
+                    <div class=" col-sm">
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="item_name">
+                                Benutzer Adresse
+                                <span style="color: red;" class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <input isfill="false" class="form-control" id="user_address" name="addUserForm" placeholder="" list="datalist_user_address"
+                                   type="text" value="">
+
+                            <datalist id="datalist_user_address">
+
+                            </datalist>
+
+                            <span style="color: #999999;" class="help-block" id="hint_item_name">
+
+                            </span>
+                            <span style="color:#ed4b4b" id="MSG_user_address" class="MSG_user_address"></span>
+                        </div>
+                    </div>
+                    <div class=" col-sm">
+                        <div class="form-group">
+                            <label for="user_language">
+                                Benutzer Sprache
+                                <span style="color: red;">*</span>
+                            </label>
+                            <select class="form-control" id="user_language" name="addUserForm">
+                                <option value="0">Bitte wählen Sie aus.</option>
+                                <option value="ar">Ar</option>
+                                <option value="de">De</option>
+                                <option value="en">En</option>
+                                <option value="tr">Tr</option>
+                                <option value="all">Alle</option>
+                            </select>
+                            <span style="color:#ed4b4b" id="MSG_user_language" class="MSG_user_language"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <h3>Kontakt Informationen</h3>
+                <!-- ComunnicationsSection -->
+                <div class="row" id="" userconnectioninformations="">
+                    <div class=" col-sm">
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="item_name">
+                                Handynummer
+                                <span style="color: red;" class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <input isfill="false" class="form-control" id="user_phone" name="addUserForm" placeholder="" list="datalist_user_phone" type="text"
+                                   value="">
+                            <datalist id="datalist_user_phone">
+
+                            </datalist>
+                            <span style="color: #999999;" class="help-block" id="hint_item_name">
+                            </span>
+                            <span style="color:#ed4b4b" id="MSG_user_phone" class="MSG_user_phone"></span>
+                        </div>
+                    </div>
+                    <div class=" col-sm">
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="item_name">
+                                Benutzer E-mail
+                                <span style="color: red;" class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <input isfill="false" class="form-control" id="user_email" name="addUserForm" placeholder="" list="datalist_user_email" type="email"
+                                   value="">
+                            <datalist id="datalist_user_email">
+
+                            </datalist>
+                            <span style="color: #999999;" class="help-block" id="hint_item_name">
+                            </span>
+                            <span style="color:#ed4b4b" id="MSG_user_email" class="MSG_user_email"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+                <h3>Verwaltungs informationen</h3>
+                <div class="row" id="UsersRolesInformation">
+                    <div class=" col-sm">
+                        <div class="form-group">
+                            <label for="user_role">
+                                Benutzer-Rolle
+                                <span style="color: red;">*</span>
+                            </label>
+                            <select class="form-control" id="user_role" name="addUserForm">
+                                <option value="0">Bitte wählen Sie aus.</option>
+                                <option value="manager">Manager</option>
+                                <option value="photographer">Fotograf</option>
+                                <option value="admin">Admin</option>
+                                <option value="artikelWriter">Artikel Schriftsteller</option>
+                                <option value="publisher">Herausgeber</option>
+                                <option value="all">Alle</option>
+                            </select>
+                            <span style="color:#ed4b4b" id="MSG_user_role" class="MSG_user_role"></span>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="item_name">
+                                Prozentsatz
+                                <span style="color: red;" class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <input isfill="false" class="form-control" id="gain_ratio" name="addUserForm" placeholder="" list="datalist_gain_ratio" type="number"
+                                   value="">
+                            <datalist id="datalist_gain_ratio">
+
+                            </datalist>
+                            <span style="color: #999999;" class="help-block" id="hint_item_name">
+                            </span>
+                            <span style="color:#ed4b4b" id="MSG_gain_ratio" class="MSG_gain_ratio"></span>
+                        </div>
+                    </div>
+                    <div class=" col-sm">
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="item_name">
+                                Password
+                                <span style="color: red;" class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <input isfill="false" class="form-control" id="user_password" name="addUserForm" placeholder="" list="datalist_user_password"
+                                   type="password" value="">
+                            <datalist id="datalist_user_password">
+
+                            </datalist>
+                            <span style="color: #999999;" class="help-block" id="hint_item_name">
+                            </span>
+                            <span style="color:#ed4b4b" id="MSG_user_password" class="MSG_user_password"></span>
+                        </div>
+                        <div class="form-group ">
+                            <label class="control-label requiredField" for="item_name">
+                                Passwort Bestätigung
+                                <span style="color: red;" class="asteriskField">
+                                    *
+                                </span>
+                            </label>
+                            <input isfill="false" class="form-control" id="user_password_confirm" name="addUserForm" placeholder=""
+                                   list="datalist_user_password_confirm"
+                                   type="password" value="">
+
+                            <datalist id="datalist_user_password_confirm">
+
+                            </datalist>
+                            <span style="color: #999999;" class="help-block" id="hint_item_name">
+                            </span>
+                            <span style="color:#ed4b4b" id="MSG_user_password_confirm" class="MSG_user_password_confirm"></span>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+
+                <div class="col-sm">
+                    <button id="addUserFormSubmitBtn" class="btn btn-primary" name="submitBtn" min="0" onclick="btnClick()">einreichen</button>
+                </div>
+                <div class="" id="resooo" style="" >
+
+                </div>
+            </div>
+
+        </div>
+
+        <script >
+
+            /**
+             * @param {string} method to select request type
+             * @param {JSONobject} objectPass the form data to pass
+             * @param {string} key in case to set main key of passed Data
+             * **/
+            function GetPost(method, objectPass, key) {
+                var pass = {"key": key, data: objectPass};
+                return java.passData(method, JSON.stringify(pass));
+            }
+
+
+            function setStatus(message) {
+                java.setStatus(message);
+            }
+            function setRectangeColor(color) {
+                java.setRectangeColor(color);
+            }
+
+            function log(message) {
+                java.log(message);
+            }
+
+
+            function btnClick() {
+                try {
+                    var every = [];
+                    $("[name='addUserForm']").each(function (index, element) {
+                        log(index);
+                        // id select menu
+                        if ($(element).prop("tagName") === "SELECT") {
+                            // if item not selected
+                            if ($(element).val() === "0") {
+                                $(element).addClass(" erorrField ");
+                                $('#MSG_' + $(element).attr("id")).text("this should be selected");
+                                every.push(false);
+                            } else {
+                                $(element).removeClass(" erorrField ");
+                                $('#MSG_' + $(element).attr("id")).text("");
+                                every.push(true);
+                            }
+                        }
+
+                        // if input filed
+                        if ($(element).prop("tagName") === "INPUT") {
+
+                            // if the password fields not mached
+                            if ($(element).attr("type") === "password" && $(element).val() !== "") {
+                                var passConfirm = $("[type=password]");
+                            } else {
+                                // if input field is empty
+                                if ($(element).val() === "") {
+                                    $(element).addClass(" erorrField ");
+                                    $('#MSG_' + $(element).attr("id")).text("this should be filled");
+                                    every.push(false);
+                                } else {
+                                    $(element).removeClass(" erorrField ");
+                                    $('#MSG_' + $(element).attr("id")).text("");
+                                    every.push(true);
+                                }
+                            }
+                        }
+
+                    });
+
+                    if (every.every(allTreu)) {
+
+                    }
+
+                    var serverResponce = GetPost("POST", {data: "data", "soso": "rami"}, "addUserFormData");
+                    log(serverResponce);
+                    setStatus(serverResponce);
+
+                    function allTreu(elemnt, index, array) {
+                        log(elemnt);
+                        return elemnt;
+                    }
+                } catch (e) {
+                    log(e);
+                    log("erorrrrr");
+                }
+            }
+
+
+
+
+
+        </script>
+
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="main.css">
+    </body>
+
+</html>

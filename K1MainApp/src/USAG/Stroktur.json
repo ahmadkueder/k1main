@@ -32,21 +32,24 @@
                     "id": "addUser",
                     "listinerName": "addUserForm",
                     "icon": "PLUS",
-                    "fromName" : ""
+                    "fromName": "",
+                    "hint": "Benutzer hinzufügen"
                 },
                 {
                     "name": "",
                     "id": "existingUser",
-                    "listinerName": "existingUserFrom",
+                    "listinerName": "existingUserForm",
                     "icon": "LIST_ALT",
-                    "fromName" : ""
+                    "fromName": "",
+                    "hint": "Existierende Benutzer"
                 }, 
                 {
                     "name": "",
                     "id": "setingUsers",
                     "listinerName": "setingUsersForm",
                     "icon": "GEARS",
-                    "fromName" : ""
+                    "fromName": "",
+                    "hint": "Benutzer einstellen"
                 }
             ]
         },
@@ -58,7 +61,9 @@
                     "id": "",
                     "listinerName": "",
                     "icon": "PLUS",
-                    "fromName" : ""
+                    "fromName": ""
+                    ,
+                    "hint": ""
                 }
             ]
         },
@@ -70,14 +75,16 @@
                     "id": "addWerehouse",
                     "listinerName": "",
                     "icon": "PLUS",
-                    "fromName" : ""
+                    "fromName": "",
+                    "hint": ""
                 },
                 {
                     "name": "",
                     "id": "",
                     "listinerName": "",
                     "icon": "PLUS",
-                    "fromName" : ""
+                    "fromName": "",
+                    "hint": ""
                 }
             ]
         }

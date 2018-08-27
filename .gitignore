@@ -22,3 +22,5 @@ obj
 .DS_Store
 /K1MainApp/nbproject/private/
 /K1MainApp/dist/
+/engineTest/nbproject/private/
+/engineTest/dist/

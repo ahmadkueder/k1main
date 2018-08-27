@@ -8,34 +8,46 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Box;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+import javafx.scene.web.WebView;
 import jsonHandeling.lib;
 import sections.topBtns;
 
 public class FXMLDocumentController implements Initializable {
-
+    
     lib readFile;
-
+    
     @FXML
     private ScrollPane topBtnsContainer;
-
+    
     @FXML
     private BorderPane complettBorderPane;
     @FXML
     private ScrollPane leftSection;
     @FXML
-    private AnchorPane center;
-
+    private WebView center;
+    @FXML
+    private Text statusBar;
+    @FXML
+    private Rectangle boxColod;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
+            
+
+            
             topBtnsContainer.setContent(new topBtns().printTopElements());
+            
         } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
                 | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+        
     }
-
+    
 }

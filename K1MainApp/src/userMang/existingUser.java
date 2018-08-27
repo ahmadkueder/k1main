@@ -1,16 +1,24 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package userMang;
 
-/**
- *
- * @author ahmad
- */
+import HTML.webEngineManager;
+import javafx.scene.web.WebView;
+import javafx.stage.Stage;
+
 public class existingUser {
-    public void  existingUserFrom(String name){
-        System.out.println(name);
+
+    public void existingUserForm(String formName) {
+        String FormNAme;
+
+        Stage st = k1mainapp.K1MainApp.getStage();
+
+        WebView center = (WebView) st.getScene().lookup("#center");
+        try {
+            webEngineManager mang = new webEngineManager();
+            mang.initEngine(center, formName);
+
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
     }
+
 }

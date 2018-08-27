@@ -4,8 +4,9 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
-public class propsHandel {
 
+public class propsHandel {
+    
     public static String getProp(String keyName) {
         Properties prop = new Properties();
         try {
@@ -18,4 +19,5 @@ public class propsHandel {
         }
         return null;
     }
+    
 }

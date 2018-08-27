@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="k1mainapp.FXMLDocumentController">
     <children>
@@ -12,13 +16,25 @@
                 <ScrollPane id="topMenuBar" fx:id="topBtnsContainer" blendMode="SRC_ATOP" cacheShape="false" centerShape="false" focusTraversable="false" scaleShape="false" stylesheets="@../assets/topSectonStyle.css" BorderPane.alignment="CENTER" />
             </top>
             <left>
-                <ScrollPane fx:id="leftSection" fitToHeight="true" stylesheets="@../assets/leftSectionStylesheet.css" BorderPane.alignment="CENTER" />
+                <ScrollPane fx:id="leftSection" fitToHeight="true" prefHeight="474.0" prefWidth="56.0" stylesheets="@../assets/leftSectionStylesheet.css" BorderPane.alignment="CENTER" />
             </left>
-            <bottom>
-                <HBox prefHeight="0.0" BorderPane.alignment="CENTER" />
-            </bottom>
+         <bottom>
+            <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="1024.0" spacing="10.0" style="-fx-background-color: #212121;" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fx:id="statusBar" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="973.0989570617676" />
+                  <Rectangle fx:id="boxColod" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" stroke="WHITE" strokeLineCap="ROUND" strokeMiterLimit="20.0" strokeType="INSIDE" width="10.0" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </HBox>
+         </bottom>
          <center>
-            <AnchorPane fx:id="center" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <WebView fx:id="center" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
          </center>
         </BorderPane>
     </children>

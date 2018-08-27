@@ -3,6 +3,10 @@ package sections;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
+/**
+ *
+ * 
+ */
 public class leftSectionFunctions implements leftSectionFunctionsInterface {
 
     @Override

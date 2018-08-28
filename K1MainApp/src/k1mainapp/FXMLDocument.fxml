@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -19,9 +20,10 @@
                 <ScrollPane fx:id="leftSection" fitToHeight="true" prefHeight="474.0" prefWidth="56.0" stylesheets="@../assets/leftSectionStylesheet.css" BorderPane.alignment="CENTER" />
             </left>
          <bottom>
-            <HBox alignment="CENTER_LEFT" prefHeight="18.0" prefWidth="1024.0" spacing="10.0" style="-fx-background-color: #212121;" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" spacing="10.0" style="-fx-background-color: #212121;" BorderPane.alignment="CENTER">
                <children>
-                  <Text fx:id="statusBar" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="973.0989570617676" />
+                  <Text fx:id="statusBar" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Status" wrappingWidth="880.0989570617676" />
+                  <ProgressBar fx:id="prog" progress="0.0" />
                   <Rectangle fx:id="boxColod" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" stroke="WHITE" strokeLineCap="ROUND" strokeMiterLimit="20.0" strokeType="INSIDE" width="10.0" />
                </children>
                <padding>

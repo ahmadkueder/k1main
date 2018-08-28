@@ -1,9 +1,10 @@
 package sections;
 
-import USAG.propsHandel;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
-import java.lang.reflect.Method;
+import static java.lang.Class.forName;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
@@ -40,8 +41,6 @@ public class leftBtns {
 
         try {
 
-
-
             JSONArray btn_ = lib.getSpecificObject("leftSectionItems").getJSONObject(invokeSection).getJSONArray("items");
             Button btn;
             Node[] btnsNode = new Node[btn_.length()];
@@ -62,12 +61,19 @@ public class leftBtns {
 
                 btn.getStyleClass().add("leftBtns");
                 
-                btn.setTooltip(new Tooltip(btnObj.getString("hint")));
                 
+                Object clas  = forName(invokeSection + "." + btn.getId()).newInstance();
+                
+                btn.setOnAction((EventHandler<ActionEvent>) clas);
+                
+//                Constructor consr = clas.getDeclaredConstructor(new Class[]{Button.class});
+//                consr.newInstance(new Object[]{btn});
+                
+                
+                btn.setTooltip(new Tooltip(btnObj.getString("hint")));
                 btn.setGraphic(FontAwesomeIconView);
 
-                setAction(btn, invokeSection, btnFunction);
-
+                
                 btnsNode[i] = btn;
             }
 
@@ -80,38 +86,6 @@ public class leftBtns {
         }
 
         return btnContainer;
-    }
-
-    /**
-     * @param btn Button
-     * @param invokeSection string
-     * @param functionName
-     *
-     */
-    public void setAction(Button btn, String invokeSection, String functionName) {
-        btn.setOnAction(event -> {
-            System.out.println("BTN ACTION : " + event);
-            
-            Class clas;
-
-            try {
-                clas = Class.forName(invokeSection + "." + btn.getId());
-
-                Object obj = clas.newInstance();
-
-                Method meth = clas.getDeclaredMethod(functionName, String.class);
-
-                meth.invoke(obj, btn.getId());
-
-                //Method methods = clas.getDeclaredMethod(btn.getId());
-                //methods.invoke(instense, btn.getId());
-            } catch (Exception e) {
-                String name = new Object() {
-                }.getClass().getEnclosingMethod().getName();
-                System.out.println("erorr in : " + getClass().getName() + ", Message : " + e.getMessage() + ", method Name : " + name);
-            }
-        });
-
     }
 
 }

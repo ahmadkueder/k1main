@@ -58,11 +58,17 @@
             "items": [
                 {
                     "name": "",
-                    "id": "",
+                    "id": "addProduct",
                     "listinerName": "",
                     "icon": "PLUS",
-                    "fromName": ""
-                    ,
+                    "fromName": "",
+                    "hint": ""
+                },{
+                    "name": "",
+                    "id": "existProducts",
+                    "listinerName": "",
+                    "icon": "PLUS",
+                    "fromName": "",
                     "hint": ""
                 }
             ]

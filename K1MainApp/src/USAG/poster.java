@@ -22,7 +22,6 @@ import org.json.JSONObject;
 public final class poster {
 
     // GET OR POST
-
     /**
      *
      */
@@ -65,7 +64,6 @@ public final class poster {
     private String serverResponce;
 
     // get main object Key 
-
     /**
      *
      */
@@ -220,7 +218,7 @@ public final class poster {
                 default:
             }
 
-         } catch (Exception ex) {
+        } catch (Exception ex) {
             String name = new Object() {
             }.getClass().getEnclosingMethod().getName();
             System.out.println(ex.getMessage() + " - " + getClass().getName() + " - " + name);
@@ -233,7 +231,7 @@ public final class poster {
      * *
      * to return the data as string to pass them into post or get
      *
-     * @return 
+     * @return
      */
     private String encodeJsonObject() {
 

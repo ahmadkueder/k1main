@@ -1,4 +1,9 @@
-package userMang;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package productsMange;
 
 import HTML.webManager;
 import javafx.event.Event;
@@ -9,11 +14,11 @@ import javafx.scene.control.Button;
  *
  * @author ahmad
  */
-public final class addUser implements EventHandler {
+public class addProduct implements EventHandler {
 
     @Override
     public void handle(Event event) {
-        Button current = (Button) event.getTarget();
+                Button current = (Button) event.getTarget();
         String FormNAme = current.getId();
         try {
             
@@ -27,4 +32,5 @@ public final class addUser implements EventHandler {
             System.out.println("erorr in : " + getClass().getName() + ", Message : " + ex.getMessage() + ", method Name : " + name);
         }
     }
+    
 }

@@ -235,6 +235,8 @@
 
         <script >
 
+
+            // from java bridge
             /**
              * @param {string} method to select request type
              * @param {JSONobject} objectPass the form data to pass
@@ -244,7 +246,6 @@
                 var pass = {"key": key, data: objectPass};
                 return java.passData(method, JSON.stringify(pass));
             }
-
 
             function setStatus(message) {
                 java.setStatus(message);
@@ -258,72 +259,10 @@
             }
 
 
-            function btnClick() {
-                try {
-                    var every = [];
-                    $("[name='addUserForm']").each(function (index, element) {
-                        log(index);
-                        // id select menu
-                        if ($(element).prop("tagName") === "SELECT") {
-                            // if item not selected
-                            if ($(element).val() === "0") {
-                                $(element).addClass(" erorrField ");
-                                $('#MSG_' + $(element).attr("id")).text("this should be selected");
-                                every.push(false);
-                            } else {
-                                $(element).removeClass(" erorrField ");
-                                $('#MSG_' + $(element).attr("id")).text("");
-                                every.push(true);
-                            }
-                        }
-
-                        // if input filed
-                        if ($(element).prop("tagName") === "INPUT") {
-
-                            // if the password fields not mached
-                            if ($(element).attr("type") === "password" && $(element).val() !== "") {
-                                var passConfirm = $("[type=password]");
-                            } else {
-                                // if input field is empty
-                                if ($(element).val() === "") {
-                                    $(element).addClass(" erorrField ");
-                                    $('#MSG_' + $(element).attr("id")).text("this should be filled");
-                                    every.push(false);
-                                } else {
-                                    $(element).removeClass(" erorrField ");
-                                    $('#MSG_' + $(element).attr("id")).text("");
-                                    every.push(true);
-                                }
-                            }
-                        }
-
-                    });
-
-                    if (every.every(allTreu)) {
-
-                    }
-
-                    var serverResponce = GetPost("POST", {data: "data", "soso": "rami"}, "addUserFormData");
-                    log(serverResponce);
-                    setStatus(serverResponce);
-
-                    function allTreu(elemnt, index, array) {
-                        log(elemnt);
-                        return elemnt;
-                    }
-                } catch (e) {
-                    log(e);
-                    log("erorrrrr");
-                }
-            }
-
-
-
-
 
         </script>
 
-        <script src="main.js"></script>
+        <script src="addUserMain.js"></script>
         <link rel="stylesheet" href="main.css">
     </body>
 

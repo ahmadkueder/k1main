@@ -1,5 +1,6 @@
 package sections;
 
+import HTML.webManager;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import javafx.scene.Scene;
@@ -16,16 +17,19 @@ public class topBtnsFunctions implements topBtnsFunctionsInterFace {
 
     @Override
     public void userMang(Button thisBtn) {
+        new webManager().setWVempty();
         leftSection.setContent(this.invokeMethodLeftSections(thisBtn.getId()));
     }
 
     @Override
     public void productsMange(Button thisBtn) {
+        new webManager().setWVempty();
         leftSection.setContent(this.invokeMethodLeftSections(thisBtn.getId()));
     }
 
     @Override
     public void werehouseMange(Button thisBtn) {
+        new webManager().setWVempty();
         leftSection.setContent(this.invokeMethodLeftSections(thisBtn.getId()));
     }
 
@@ -37,7 +41,7 @@ public class topBtnsFunctions implements topBtnsFunctionsInterFace {
 
             Object instance = clas.newInstance();
 
-            Method method = clas.getDeclaredMethod("printLeftSectionBtns" , String.class);
+            Method method = clas.getDeclaredMethod("printLeftSectionBtns", String.class);
 
             return (VBox) method.invoke(instance, sectionToCall);
 
@@ -49,5 +53,7 @@ public class topBtnsFunctions implements topBtnsFunctionsInterFace {
         }
         return null;
     }
+
+
 
 }

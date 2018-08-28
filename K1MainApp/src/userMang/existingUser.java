@@ -1,24 +1,29 @@
 package userMang;
 
-import HTML.webEngineManager;
-import javafx.scene.web.WebView;
-import javafx.stage.Stage;
+import HTML.webManager;
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.scene.control.Button;
 
-public class existingUser {
+/**
+ *
+ * @author ahmad
+ */
+public class existingUser implements EventHandler {
 
-    public void existingUserForm(String formName) {
-        String FormNAme;
-
-        Stage st = k1mainapp.K1MainApp.getStage();
-
-        WebView center = (WebView) st.getScene().lookup("#center");
+    @Override
+    public void handle(Event event) {
+        Button current = (Button) event.getTarget();
+        String FormNAme = current.getId();
         try {
-            webEngineManager mang = new webEngineManager();
-            mang.initEngine(center, formName);
-
+            
+            new webManager().setURL(FormNAme);
+            new webManager().setJSobjectName("window");
+            
         } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+            String name = new Object() {
+            }.getClass().getEnclosingMethod().getName();
+            System.out.println("erorr in : " + getClass().getName() + ", Message : " + ex.getMessage() + ", method Name : " + name);
         }
     }
-
 }

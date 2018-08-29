@@ -29,10 +29,12 @@ $(document).ready(function () {
         log("erorrrrr");
     }
 
-
 });
-/******** ADD USER FORM ********/
 
+
+
+/******** ADD USER FORM ********/
+log("from aduser main");
 function btnClick() {
     try {
         var every = [];
@@ -65,9 +67,8 @@ function btnClick() {
         }
 
 
-
         if (every.every(allTreu)) {
-            
+
         }
 
         var serverResponce = GetPost("POST", {data: "data", "soso": "rami"}, "addUserFormData");
@@ -78,6 +79,7 @@ function btnClick() {
             log(elemnt);
             return elemnt;
         }
+
     } catch (e) {
         log(e);
         log("erorrrrr");
@@ -87,8 +89,5 @@ function btnClick() {
 function checkEmailFields(key, value) {
 
 }
-
-/********EXISTING USERS FORM *********/
-
 
 

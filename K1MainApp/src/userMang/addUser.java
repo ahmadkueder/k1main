@@ -18,8 +18,6 @@ public final class addUser implements EventHandler {
         try {
             
             new webManager().setURL(FormNAme);
-            new webManager().setJSobjectName("window");
-            
             
         } catch (Exception ex) {
             String name = new Object() {

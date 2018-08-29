@@ -5,7 +5,8 @@
  */
 package k1mainapp;
 
-import USAG.hardwares;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -20,7 +21,7 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class K1MainApp extends Application {
-    
+
     static Stage stage;
 
     public static Stage getStage() {
@@ -30,40 +31,38 @@ public class K1MainApp extends Application {
     public static void setStage(Stage stage) {
         K1MainApp.stage = stage;
     }
-    
-    
+
     @Override
     public void start(Stage stage) throws Exception {
 
+        System.out.println(getClass().getProtectionDomain().getCodeSource().getLocation());
+        
         setStage(stage);
         Screen screen = Screen.getPrimary();
         Rectangle2D bounds = screen.getVisualBounds();
-        
-        
+
         stage.setTitle("Ahmad");
 
-        
 //        stage.setX(bounds.getMinX());
 //        stage.setY(bounds.getMinY());
 //        stage.setWidth(bounds.getWidth());
 //        stage.setHeight(bounds.getHeight());
-        
+
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
-        
+
         AnchorPane left = new AnchorPane();
         left.setScaleX(100);
         left.setScaleY(200);
-        
+
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
     }
-    
+
     public static void main(String[] args) throws IOException, Exception {
-        
         launch(args);
-        
+
     }
 
 // return grid pane
@@ -72,12 +71,12 @@ public class K1MainApp extends Application {
         grid.setAlignment(Pos.CENTER);
         grid.setVgap(10);
         grid.setHgap(10);
-        
+
         for (int i = 0; i < 50; i++) {
             grid.add(new Button("sss"), 0, i);
         }
-        
+
         return grid;
     }
-    
+
 }

@@ -12,10 +12,7 @@ public class existProducts implements EventHandler {
         Button current = (Button) event.getTarget();
         String FormNAme = current.getId();
         try {
-
             new webManager().setURL(FormNAme);
-            new webManager().setJSobjectName("window");
-
         } catch (Exception ex) {
             String name = new Object() {
             }.getClass().getEnclosingMethod().getName();

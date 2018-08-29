@@ -10,12 +10,14 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 
-/**
- *
- * @author ahmad
- */
+
 public class addProduct implements EventHandler {
 
+    public addProduct() {
+        System.out.println("from addProduct Constracrut");
+    }
+
+    
     @Override
     public void handle(Event event) {
                 Button current = (Button) event.getTarget();
@@ -23,8 +25,6 @@ public class addProduct implements EventHandler {
         try {
             
             new webManager().setURL(FormNAme);
-            new webManager().setJSobjectName("window");
-            
             
         } catch (Exception ex) {
             String name = new Object() {

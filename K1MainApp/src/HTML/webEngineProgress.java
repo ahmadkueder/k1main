@@ -11,8 +11,14 @@ public class webEngineProgress implements ChangeListener<Number> {
     @Override
     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
         try {
+
             ProgressBar bar = (ProgressBar) k1mainapp.K1MainApp.getStage().getScene().lookup("#prog");
+
             bar.setProgress((double) newValue);
+            
+            if ((double) newValue == 1.0) {
+                bar.setProgress((double) 0.0);
+            }
 
         } catch (Exception ex) {
             String name = new Object() {

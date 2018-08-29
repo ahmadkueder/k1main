@@ -1,5 +1,6 @@
 package userMang;
 
+import HTML.webEngineListener;
 import HTML.webManager;
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -16,9 +17,7 @@ public class existingUser implements EventHandler {
         Button current = (Button) event.getTarget();
         String FormNAme = current.getId();
         try {
-            
             new webManager().setURL(FormNAme);
-            new webManager().setJSobjectName("window");
             
         } catch (Exception ex) {
             String name = new Object() {

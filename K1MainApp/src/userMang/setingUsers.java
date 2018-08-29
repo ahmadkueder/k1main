@@ -23,7 +23,6 @@ public class setingUsers implements EventHandler {
         try {
 
             new webManager().setURL(FormNAme);
-            new webManager().setJSobjectName("window");
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage());

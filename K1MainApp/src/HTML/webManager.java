@@ -1,8 +1,8 @@
 package HTML;
 
 import java.io.File;
-import java.net.URL;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -20,8 +20,6 @@ public class webManager {
 
     private static WebView wv;
     private static WebEngine we;
-    private ProgressBar bar;
-    private String status;
 
     public webManager(WebView wv, WebEngine we) {
         // init webBrowser
@@ -46,12 +44,11 @@ public class webManager {
 
             //URL url = new URL("/HTML/" + urlName + ".html");
             //URL url = new URL("http://youtube.com");
-            
-            
             if (new File("HTML/" + urlName + ".html").exists()) {
                 we.load(new File("HTML/" + urlName + ".html").toURI().toString());
             } else {
                 we.loadContent("<h1>File Not created yet.</h1>");
+                setStatusBoxColor("RED");
             }
 
             return true;
@@ -78,23 +75,26 @@ public class webManager {
         return false;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        status = status;
-    }
-
     public void setWVempty() {
         we.loadContent("");
     }
 
-    public ProgressBar getBar() {
-        return bar;
+    public void setStatusBoxColor(String val) {
+        Stage st = k1mainapp.K1MainApp.getStage();
+        javafx.scene.shape.Rectangle statusBar = (javafx.scene.shape.Rectangle) st.getScene().lookup("#boxColod");
+        statusBar.setFill(Color.valueOf(val));
+        System.out.println("set Box Color");
     }
 
-    public void setBar(ProgressBar bar) {
-        this.bar = bar;
+    public void setProgressValue(double value) {
+        ProgressBar bar = (ProgressBar) k1mainapp.K1MainApp.getStage().getScene().lookup("#prog");
+
+        bar.setProgress((double) value);
+
+        if ((double) value == 1.0) {
+            bar.setProgress((double) 0);
+        }
+
     }
+
 }

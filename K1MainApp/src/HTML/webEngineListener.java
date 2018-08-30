@@ -19,6 +19,7 @@ public class webEngineListener extends webManager implements ChangeListener<Work
                 case SUCCEEDED:
                     super.setStatusBoxColor(Color.GREEN.toString());
                     new webManager().setJSobjectName("window");
+                    
                     break;
                 case READY:
                     super.setStatusBoxColor(Color.BLUE.toString());

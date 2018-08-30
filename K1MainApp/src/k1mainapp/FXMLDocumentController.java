@@ -1,6 +1,5 @@
 package k1mainapp;
 
-import HTML.webEngineListener;
 import HTML.webManager;
 import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
@@ -54,7 +53,8 @@ public class FXMLDocumentController implements Initializable {
             topBtnsContainer.setContent(new topBtns().printTopElements());
             webManager wm = new webManager(center, eng);
             
-
+            
+            
         } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
                 | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);

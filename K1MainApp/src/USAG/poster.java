@@ -14,6 +14,7 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import org.json.JSONObject;
+import HTML.*;
 
 /**
  *
@@ -75,12 +76,15 @@ public final class poster {
     public poster() {
     }
 
+    internet internet;
+
     /**
      * @param type
      * @param topass
      *
      */
     public poster(String type, String topass) {
+
         try {
             switch (type) {
                 case "GET":
@@ -111,59 +115,61 @@ public final class poster {
     private void getMethod() {
         String dataToPass = this.encodeJsonObject();
 
-        try {
+        if (new internet(con).isIsConnect()) {
+            try {
 
-            URL url = new URL(getProp("APIlink") + "?" + dataToPass);
+                URL url = new URL(getProp("APIlink") + "?" + dataToPass);
 
-            con = (HttpURLConnection) url.openConnection();
+                con = (HttpURLConnection) url.openConnection();
 
-            con.setRequestMethod("GET");
-            con.setRequestProperty("Content-Type", "application/json");
-            hardwares hard = new hardwares();
-            con.setRequestProperty("User-Agent", new JSONObject().put("MAC", hard.getCorrentMacAdress()).toString());
+                con.setRequestMethod("GET");
+                con.setRequestProperty("Content-Type", "application/json");
+                hardwares hard = new hardwares();
+                con.setRequestProperty("User-Agent", new JSONObject().put("MAC", hard.getCorrentMacAdress()).toString());
 
-            con.setDoOutput(true);
+                con.setDoOutput(true);
 
-            int contentLength = con.getContentLength();
+                int contentLength = con.getContentLength();
 
-            System.out.println(contentLength);
+                
 
-            InputStream inpput = con.getInputStream();
-            BufferedReader br = new BufferedReader(new InputStreamReader(inpput));
+                InputStream inpput = con.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(inpput));
 
-            String line = null;
-            StringBuilder buld = new StringBuilder();
+                String line = null;
+                StringBuilder buld = new StringBuilder();
 
-            int readBytes = 0;
-            while ((line = br.readLine()) != null) {
-                readBytes += line.getBytes("ISO-8859-2").length + 2; // CRLF bytes!!
-                System.out.println(readBytes);
-                buld.append(line);
+                while ((line = br.readLine()) != null) {
+
+                    buld.append(line);
+                }
+
+                switch (con.getResponseCode()) {
+                    case 200:
+                        setConnectionStatus("CONNECTED");
+                        setserverResponce(buld.toString());
+                        setIsDone(true);
+                        break;
+                    case 404:
+                        setIsDone(false);
+                        setConnectionStatus("NOT FOUND");
+                        setserverResponce(null);
+                        break;
+                    default:
+                        setConnectionStatus("Connection Code Is : " + con.getResponseCode());
+                        setIsDone(false);
+                }
+
+            } catch (Exception ex) {
+                String name = new Object() {
+                }.getClass().getEnclosingMethod().getName();
+                System.out.println(ex.getMessage() + " - " + getClass().getName() + " - " + name);
+            } finally {
+                con.disconnect();
             }
-
-            System.out.println(buld.toString());
-            switch (con.getResponseCode()) {
-                case 200:
-                    setConnectionStatus("CONNECTED");
-                    setserverResponce(buld.toString());
-                    setIsDone(true);
-                    break;
-                case 404:
-                    setIsDone(false);
-                    setConnectionStatus("NOT FOUND");
-                    setserverResponce(null);
-                    break;
-                default:
-                    setConnectionStatus("Connection Code Is : " + con.getResponseCode());
-                    setIsDone(false);
-            }
-
-        } catch (Exception ex) {
-            String name = new Object() {
-            }.getClass().getEnclosingMethod().getName();
-            System.out.println(ex.getMessage() + " - " + getClass().getName() + " - " + name);
-        } finally {
-            con.disconnect();
+        } else {
+            new JavaBridge().setRectangeColor("RED");
+            new JavaBridge().setStatus("No internet Connection");
         }
     }
 
@@ -174,56 +180,61 @@ public final class poster {
     private void postMehto() {
         String dataToPass = this.encodeJsonObject();
         byte[] converByte = dataToPass.getBytes();
+        if (new internet(con).isIsConnect()) {
+            
+            try {
+                con = (HttpURLConnection) new URL(getProp("APIlink")).openConnection();
+                con.setDoOutput(true);
+                con.setRequestMethod(methodType);
+                con.setRequestMethod(this.getMethodType());
+                hardwares hard = new hardwares();
 
-        try {
-            con = (HttpURLConnection) new URL(getProp("APIlink")).openConnection();
+                con.setRequestProperty("User-Agent", new JSONObject()
+                        .put("MAC", hard.getCorrentMacAdress())
+                        .toString());
 
-            con.setDoOutput(true);
-            con.setRequestMethod(methodType);
-            con.setRequestMethod(this.getMethodType());
-            hardwares hard = new hardwares();
+                con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
 
-            con.setRequestProperty("User-Agent", new JSONObject()
-                    .put("MAC", hard.getCorrentMacAdress())
-                    .toString());
+                DataOutputStream out = new DataOutputStream(con.getOutputStream());
+                out.write(converByte);
 
-            con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                InputStream input = con.getInputStream();
+                InputStreamReader reader = new InputStreamReader(input);
+                BufferedReader breader = new BufferedReader(reader);
+                StringBuilder builder = new StringBuilder();
 
-            DataOutputStream out = new DataOutputStream(con.getOutputStream());
-            out.write(converByte);
+                String line;
+                while ((line = breader.readLine()) != null) {
+                    builder.append(line).append("\n");
+                }
 
-            InputStream input = con.getInputStream();
-            InputStreamReader reader = new InputStreamReader(input);
-            BufferedReader breader = new BufferedReader(reader);
-            StringBuilder builder = new StringBuilder();
+                switch (con.getResponseCode()) {
+                    case 200:
+                        this.setServerResponce(builder.toString());
+                        this.setConnectionStatus("Connected");
+                        this.setserverResponce(builder.toString());
+                        this.setIsDone(true);
+                        break;
+                    case 404:
+                        this.setServerResponce(builder.toString());
+                        this.setConnectionStatus("NOT FOUND");
+                        this.setserverResponce(builder.toString());
+                        this.setIsDone(false);
+                        break;
+                    default:
+                }
 
-            String line;
-            while ((line = breader.readLine()) != null) {
-                builder.append(line).append("\n");
+            } catch (Exception ex) {
+                String name = new Object() {
+                }.getClass().getEnclosingMethod().getName();
+                System.out.println(ex.getMessage() + " - " + getClass().getName() + " - " + name);
+                System.out.println(ex.getMessage() + " - " + getClass().getName() + " - ");
+
             }
-
-            switch (con.getResponseCode()) {
-                case 200:
-                    this.setServerResponce(builder.toString());
-                    this.setConnectionStatus("Connected");
-                    this.setserverResponce(builder.toString());
-                    this.setIsDone(true);
-                    break;
-                case 404:
-                    this.setServerResponce(builder.toString());
-                    this.setConnectionStatus("NOT FOUND");
-                    this.setserverResponce(builder.toString());
-                    this.setIsDone(false);
-                    break;
-                default:
-            }
-
-        } catch (Exception ex) {
-            String name = new Object() {
-            }.getClass().getEnclosingMethod().getName();
-            System.out.println(ex.getMessage() + " - " + getClass().getName() + " - " + name);
-            System.out.println(ex.getMessage() + " - " + getClass().getName() + " - ");
-
+        } else {
+            
+            new JavaBridge().setRectangeColor("RED");
+            new JavaBridge().setStatus("No internet Connection");
         }
     }
 

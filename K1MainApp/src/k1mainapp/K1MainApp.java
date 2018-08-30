@@ -32,8 +32,7 @@ public class K1MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
-        System.out.println(getClass().getProtectionDomain().getCodeSource().getLocation());
+        stage.setFullScreen(true);
         
         setStage(stage);
         Screen screen = Screen.getPrimary();

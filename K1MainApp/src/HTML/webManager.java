@@ -25,10 +25,18 @@ public class webManager {
         // init webBrowser
         we = wv.getEngine();
         we.setJavaScriptEnabled(true);
+        wv.setContextMenuEnabled(false);
+        
         we.getLoadWorker().stateProperty().addListener(new webEngineListener());
 
         we.getLoadWorker().progressProperty().addListener(new webEngineProgress());
 
+        we.setOnAlert(new onAlertActions());
+
+        we.setOnError(new onErorrActions());
+        
+        we.setOnStatusChanged(new onStatusChanges());
+        
         webManager.wv = wv;
         webManager.we = we;
 
@@ -36,21 +44,17 @@ public class webManager {
 
     // set Engine URL
     public boolean setURL(String urlName) {
-        System.out.println("from set URL");
         Stage st = k1mainapp.K1MainApp.getStage();
         javafx.scene.shape.Rectangle statusBar = (javafx.scene.shape.Rectangle) st.getScene().lookup("#boxColod");
         try {
-            //System.out.println(new File("/HTML/main.css").getPath());
-
-            //URL url = new URL("/HTML/" + urlName + ".html");
-            //URL url = new URL("http://youtube.com");
             if (new File("HTML/" + urlName + ".html").exists()) {
                 we.load(new File("HTML/" + urlName + ".html").toURI().toString());
+                new JavaBridge().setStatus("Done");
             } else {
                 we.loadContent("<h1>File Not created yet.</h1>");
-                setStatusBoxColor("RED");
+                new JavaBridge().setStatus("Erorr");
+                new JavaBridge().setRectangeColor("RED");
             }
-
             return true;
         } catch (Exception ex) {
             String name = new Object() {
@@ -62,7 +66,6 @@ public class webManager {
     }
 
     public boolean setJSobjectName(String jsName) {
-
         try {
             JSObject jsobject = (JSObject) we.executeScript(jsName);
             jsobject.setMember("java", new JavaBridge());
@@ -70,7 +73,10 @@ public class webManager {
         } catch (Exception ex) {
             String name = new Object() {
             }.getClass().getEnclosingMethod().getName();
-            System.out.println("erorr in : " + getClass().getName() + ", Message : " + ex.getMessage() + ", method Name : " + name);
+            System.out.println(
+                    "erorr in : " + getClass().getName()
+                    + ", Message : " + ex.getMessage()
+                    + ", method Name : " + name);
         }
         return false;
     }
@@ -83,7 +89,6 @@ public class webManager {
         Stage st = k1mainapp.K1MainApp.getStage();
         javafx.scene.shape.Rectangle statusBar = (javafx.scene.shape.Rectangle) st.getScene().lookup("#boxColod");
         statusBar.setFill(Color.valueOf(val));
-        System.out.println("set Box Color");
     }
 
     public void setProgressValue(double value) {

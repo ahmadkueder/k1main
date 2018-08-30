@@ -37,7 +37,6 @@ public class topBtnsFunctions implements topBtnsFunctionsInterFace {
     public VBox invokeMethodLeftSections(String sectionToCall) {
         Class clas;
         try {
-            System.out.println("left section was invoked");
             clas = Class.forName("sections.leftBtns");
 
             Object instance = clas.newInstance();

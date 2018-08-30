@@ -71,12 +71,11 @@ function btnClick() {
 
         }
 
-        var serverResponce = GetPost("POST", {data: "data", "soso": "rami"}, "addUserFormData");
+        var serverResponce = GetPost("GET", {data: "data", "soso": "rami"}, "addUserFormData");
         log(serverResponce);
         setStatus(serverResponce);
 
         function allTreu(elemnt, index, array) {
-            log(elemnt);
             return elemnt;
         }
 

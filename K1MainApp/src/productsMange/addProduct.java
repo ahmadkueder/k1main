@@ -14,7 +14,7 @@ import javafx.scene.control.Button;
 public class addProduct implements EventHandler {
 
     public addProduct() {
-        System.out.println("from addProduct Constracrut");
+        
     }
 
     

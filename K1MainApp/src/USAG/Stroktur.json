@@ -98,10 +98,10 @@
     "databaseStroktur": {
         "databasName": "",
         "tables": [{
-                "tableName": "",
+                "tableName": "test",
                 "columns": {
                     "id": {
-                        "type": "",
+                        "type": "PRIM",
                         "length": "",
                         "addtional": ""
                     }

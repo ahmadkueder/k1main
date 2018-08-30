@@ -10,7 +10,7 @@ public class internet {
 
     public internet(URLConnection con) {
         try {
-            URL url = new URL(propsHandel.getProp("APIlink"));
+            URL url = new URL(new propsHandel().getProp("APIlink"));
             con = url.openConnection();
             con.connect();
             internet.isConnect = true;

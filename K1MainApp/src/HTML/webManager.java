@@ -47,10 +47,12 @@ public class webManager {
         Stage st = k1mainapp.K1MainApp.getStage();
         javafx.scene.shape.Rectangle statusBar = (javafx.scene.shape.Rectangle) st.getScene().lookup("#boxColod");
         try {
-            if (new File("HTML/" + urlName + ".html").exists()) {
-                we.load(new File("HTML/" + urlName + ".html").toURI().toString());
+            
+            if (new File("./changableFiles/HTML/" + urlName + ".html").exists()) {
+                we.load(new File("./changableFiles/HTML/" + urlName + ".html").toURI().toString());
                 new JavaBridge().setStatus("Done");
             } else {
+                System.out.println("FILE NOT FOUND");
                 we.loadContent("<h1>File Not created yet.</h1>");
                 new JavaBridge().setStatus("Erorr");
                 new JavaBridge().setRectangeColor("RED");

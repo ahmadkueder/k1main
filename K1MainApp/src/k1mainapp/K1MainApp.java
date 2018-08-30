@@ -5,6 +5,7 @@
  */
 package k1mainapp;
 
+import java.awt.Desktop;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -33,8 +34,11 @@ public class K1MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         try {
-            stage.setFullScreen(true);
+            //stage.setFullScreen(true);
 
+            System.out.println( Desktop.getDesktop().isSupported(Desktop.Action.OPEN));
+            
+            
             setStage(stage);
             Screen screen = Screen.getPrimary();
             Rectangle2D bounds = screen.getVisualBounds();

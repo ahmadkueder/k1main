@@ -1,16 +1,27 @@
 package USAG;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
 
 
 public class propsHandel {
+    private final String propPath  = "./changableFiles/staticValues.properties";
     
-    public static String getProp(String keyName) {
+    
+    public String getPropPath() {
+        return propPath;
+    }
+    
+    
+    
+    public String getProp(String keyName) {
+
         Properties prop = new Properties();
         try {
-            try (FileInputStream output = new FileInputStream("src/USAG/staticValues.properties")) {
+            File file = new File(propPath);
+            try ( FileInputStream output = new FileInputStream(file)  ) {
                 prop.load(output);
             }
             return prop.getProperty(keyName);

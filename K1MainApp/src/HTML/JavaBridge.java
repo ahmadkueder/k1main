@@ -71,7 +71,7 @@ public class JavaBridge {
     public String getLink_() {
 
         try {
-            String apiLink = propsHandel.getProp("APIlink");
+            String apiLink =new propsHandel().getProp("APIlink");
             return apiLink;
         } catch (Exception ex) {
             System.out.println("Class name : " + getClass().getName() + ", Message : " + ex.getMessage());

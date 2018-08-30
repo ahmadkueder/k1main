@@ -1,6 +1,6 @@
 package sections;
 
-import static USAG.propsHandel.getProp;
+import USAG.propsHandel;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import java.lang.reflect.InvocationTargetException;
@@ -21,7 +21,7 @@ public class topBtns {
 
     HBox hbox;
     lib jsonHand;
-    final String JSONfilePath = getProp("jsonFilePath");
+    final String JSONfilePath = new propsHandel().getProp("jsonFilePath");
 
     public HBox printTopElements() {
 

@@ -1,6 +1,6 @@
 package USAG;
 
-import static USAG.propsHandel.getProp;
+import static USAG.propsHandel.*;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -118,7 +118,7 @@ public final class poster {
         if (new internet(con).isIsConnect()) {
             try {
 
-                URL url = new URL(getProp("APIlink") + "?" + dataToPass);
+                URL url = new URL(new propsHandel().getProp("APIlink") + "?" + dataToPass);
 
                 con = (HttpURLConnection) url.openConnection();
 
@@ -183,7 +183,7 @@ public final class poster {
         if (new internet(con).isIsConnect()) {
             
             try {
-                con = (HttpURLConnection) new URL(getProp("APIlink")).openConnection();
+                con = (HttpURLConnection) new URL(new propsHandel().getProp("APIlink")).openConnection();
                 con.setDoOutput(true);
                 con.setRequestMethod(methodType);
                 con.setRequestMethod(this.getMethodType());

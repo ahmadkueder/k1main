@@ -23,8 +23,7 @@ public class topBtns {
     lib jsonHand;
     final String JSONfilePath = getProp("jsonFilePath");
 
-    public HBox printTopElements() throws ClassNotFoundException,
-            NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+    public HBox printTopElements() {
 
         // init container
         hbox = new HBox();

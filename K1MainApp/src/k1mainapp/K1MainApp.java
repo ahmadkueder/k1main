@@ -32,29 +32,34 @@ public class K1MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        stage.setFullScreen(true);
-        
-        setStage(stage);
-        Screen screen = Screen.getPrimary();
-        Rectangle2D bounds = screen.getVisualBounds();
+        try {
+            stage.setFullScreen(true);
 
-        stage.setTitle("Ahmad");
+            setStage(stage);
+            Screen screen = Screen.getPrimary();
+            Rectangle2D bounds = screen.getVisualBounds();
+
+            stage.setTitle("Ahmad");
 
 //        stage.setX(bounds.getMinX());
 //        stage.setY(bounds.getMinY());
 //        stage.setWidth(bounds.getWidth());
 //        stage.setHeight(bounds.getHeight());
+            Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
 
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+            AnchorPane left = new AnchorPane();
+            left.setScaleX(100);
+            left.setScaleY(200);
 
-        AnchorPane left = new AnchorPane();
-        left.setScaleX(100);
-        left.setScaleY(200);
+            Scene scene = new Scene(root);
 
-        Scene scene = new Scene(root);
-
-        stage.setScene(scene);
-        stage.show();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception ex) {
+            String name = new Object() {
+            }.getClass().getEnclosingMethod().getName();
+            System.out.println("erorr in : " + getClass().getName() + ", Message : " + ex.getMessage() + ", method Name : " + name);
+        }
     }
 
     public static void main(String[] args) throws IOException, Exception {

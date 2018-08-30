@@ -22,28 +22,35 @@ $(document).ready(function () {
         { // model_number	amount	place
             var row = parseData[i];
             var tr = $(`<tr id="rowID_${parseData[i].id}"></tr>`);
-            $.each(row, function (index, value) {
-                log(index);
-                if (index === "place" || index === "model_number" || index === "model") {
-                    tr.append(`<th><input id="${value}" name="${value}" type="text" value="${value}"/></th>`);
-                }else{
+            $.each(row, function (key, value) {
+                log(key);
+                if (key === "place" || key === "model_number" || key === "model") {
+                    tr.append(`<th><input id="${key}" itemid="${parseData[i].id}" name="${value}" type="text" value="${value}"/></th>`);
+                } else {
                     tr.append(`<th>${value}</th>`);
                 }
-                
+
             });
 
-            var removeBTN = ``;
-            var editeBTN = ``;
-            tr.append(`<th></th>`);
+            var removeBTN = `<button action="delete" itemid="${parseData[i].id}" ><i class="far fa-trash-alt"></i></button>`;
+            var editeBTN = `<button action="edit"  itemid="${parseData[i].id}" ><i class="fas fa-edit"></i></button>`;
+            tr.append(`<th>${ removeBTN + editeBTN }</th>`);
             $("#existProductsTableBody").append(tr);
         }
 
     } catch (e) {
 
     }
-    
+
     // to change vaoues in DB
     $("input").keydown(function () {
-        
+        var itemID = $(this).attr("itemid");
+        var inputType = $(this).attr("id");
+        alert(itemID + " ---- " + inputType);
+    });
+    $("button").click(function () {
+        var itemID = $(this).attr("itemid");
+        var btnAction= $(this).attr("action");
+        alert(itemID + " ---- " + btnAction);
     });
 });

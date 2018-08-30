@@ -42,7 +42,7 @@ public class FXMLDocumentController implements Initializable {
     private Rectangle boxColod;
 
     private static WebEngine eng;
-    
+
     @FXML
     private ProgressBar prog;
 
@@ -52,15 +52,13 @@ public class FXMLDocumentController implements Initializable {
 
             topBtnsContainer.setContent(new topBtns().printTopElements());
             webManager wm = new webManager(center, eng);
-            
-            
-            
-        } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException
-                | IllegalArgumentException | InvocationTargetException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
+
+        } catch (Exception ex) {
+            String name = new Object() {
+            }.getClass().getEnclosingMethod().getName();
+            System.out.println("erorr in : " + getClass().getName() + ", Message : " + ex.getMessage() + ", method Name : " + name);
         }
 
     }
-
 
 }

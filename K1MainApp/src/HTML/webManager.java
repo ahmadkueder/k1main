@@ -1,5 +1,6 @@
 package HTML;
 
+import USAG.propsHandel;
 import java.io.File;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.paint.Color;
@@ -20,13 +21,14 @@ public class webManager {
 
     private static WebView wv;
     private static WebEngine we;
+    final JavaBridge bridg = new JavaBridge();
 
     public webManager(WebView wv, WebEngine we) {
         // init webBrowser
         we = wv.getEngine();
         we.setJavaScriptEnabled(true);
         wv.setContextMenuEnabled(false);
-        
+
         we.getLoadWorker().stateProperty().addListener(new webEngineListener());
 
         we.getLoadWorker().progressProperty().addListener(new webEngineProgress());
@@ -35,8 +37,10 @@ public class webManager {
 
         we.setOnError(new onErorrActions());
         
+        we.setConfirmHandler(new confermHandler());
+
         we.setOnStatusChanged(new onStatusChanges());
-        
+
         webManager.wv = wv;
         webManager.we = we;
 
@@ -47,16 +51,11 @@ public class webManager {
         Stage st = k1mainapp.K1MainApp.getStage();
         javafx.scene.shape.Rectangle statusBar = (javafx.scene.shape.Rectangle) st.getScene().lookup("#boxColod");
         try {
+
+            we.load(new propsHandel().getProp("pagesLink") + urlName + ".php");
+            new JavaBridge().setStatus("Done");
+
             
-            if (new File("./changableFiles/HTML/" + urlName + ".html").exists()) {
-                we.load(new File("./changableFiles/HTML/" + urlName + ".html").toURI().toString());
-                new JavaBridge().setStatus("Done");
-            } else {
-                System.out.println("FILE NOT FOUND");
-                we.loadContent("<h1>File Not created yet.</h1>");
-                new JavaBridge().setStatus("Erorr");
-                new JavaBridge().setRectangeColor("RED");
-            }
             return true;
         } catch (Exception ex) {
             String name = new Object() {
@@ -70,7 +69,7 @@ public class webManager {
     public boolean setJSobjectName(String jsName) {
         try {
             JSObject jsobject = (JSObject) we.executeScript(jsName);
-            jsobject.setMember("java", new JavaBridge());
+            jsobject.setMember("console", bridg);
             return true;
         } catch (Exception ex) {
             String name = new Object() {

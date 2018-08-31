@@ -84,7 +84,7 @@ public final class poster {
      *
      */
     public poster(String type, String topass) {
-
+        
         try {
             switch (type) {
                 case "GET":
@@ -106,6 +106,7 @@ public final class poster {
             }.getClass().getEnclosingMethod().getName();
             System.out.println(ex.getMessage() + " - " + getClass().getName() + " - " + name);
         }
+        
     }
 
     /**

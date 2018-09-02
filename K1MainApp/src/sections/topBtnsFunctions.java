@@ -33,6 +33,12 @@ public class topBtnsFunctions implements topBtnsFunctionsInterFace {
         leftSection.setContent(this.invokeMethodLeftSections(thisBtn.getId()));
     }
 
+    @Override
+    public void getWebSite(Button thisBtn) {
+        new webManager().setScureURL("http://k1computer.de/app");
+        
+    }
+
     // Section geter
     public VBox invokeMethodLeftSections(String sectionToCall) {
         Class clas;
@@ -53,7 +59,5 @@ public class topBtnsFunctions implements topBtnsFunctionsInterFace {
         }
         return null;
     }
-
-
 
 }

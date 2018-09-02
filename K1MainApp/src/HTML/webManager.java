@@ -1,13 +1,13 @@
 package HTML;
 
 import USAG.propsHandel;
-import java.io.File;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import netscape.javascript.JSObject;
+
 
 /**
  *
@@ -27,7 +27,7 @@ public class webManager {
         // init webBrowser
         we = wv.getEngine();
         we.setJavaScriptEnabled(true);
-        wv.setContextMenuEnabled(false);
+        //wv.setContextMenuEnabled(false);
 
         we.getLoadWorker().stateProperty().addListener(new webEngineListener());
 
@@ -36,11 +36,19 @@ public class webManager {
         we.setOnAlert(new onAlertActions());
 
         we.setOnError(new onErorrActions());
-        
+
         we.setConfirmHandler(new confermHandler());
 
         we.setOnStatusChanged(new onStatusChanges());
 
+        java.net.CookieHandler.setDefault(new java.net.CookieManager());
+        
+        
+
+        we.setUserAgent("kkkk");
+        
+        we.load("http://k1computer.de/newapp/external.php");
+        
         webManager.wv = wv;
         webManager.we = we;
 
@@ -48,14 +56,10 @@ public class webManager {
 
     // set Engine URL
     public boolean setURL(String urlName) {
-        Stage st = k1mainapp.K1MainApp.getStage();
-        javafx.scene.shape.Rectangle statusBar = (javafx.scene.shape.Rectangle) st.getScene().lookup("#boxColod");
         try {
-
             we.load(new propsHandel().getProp("pagesLink") + urlName + ".php");
             new JavaBridge().setStatus("Done");
 
-            
             return true;
         } catch (Exception ex) {
             String name = new Object() {
@@ -101,6 +105,18 @@ public class webManager {
             bar.setProgress((double) 0);
         }
 
+    }
+
+    public void setScureURL(String URL) {
+        try {
+            we.load(URL);
+            new JavaBridge().setStatus("Done");
+
+        } catch (Exception ex) {
+            String name = new Object() {
+            }.getClass().getEnclosingMethod().getName();
+            System.out.println("erorr in : " + getClass().getName() + ", Message : " + ex.getMessage() + ", method Name : " + name);
+        }
     }
 
 }

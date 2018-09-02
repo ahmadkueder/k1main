@@ -6,6 +6,7 @@ public class confermHandler implements Callback<String, Boolean> {
 
     @Override
     public Boolean call(String param) {
+        System.out.println(param);
         new JavaBridge().setStatus("EDIT OR DELITE ITEM.");
         System.out.println(param);
         boolean confirm = new dialogeManager().showConfitnDialog(param, "");

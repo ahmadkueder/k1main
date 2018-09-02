@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -34,6 +35,9 @@
                         <ProgressBar fx:id="prog" progress="0.0" />
                         <Rectangle fx:id="boxColod" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="10.0" stroke="WHITE" strokeLineCap="ROUND" strokeMiterLimit="20.0" strokeType="INSIDE" width="10.0" />
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
                   </HBox>
                </children>
             </AnchorPane>

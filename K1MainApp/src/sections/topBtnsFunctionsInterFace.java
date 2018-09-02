@@ -12,5 +12,8 @@ public interface topBtnsFunctionsInterFace {
 
     // to get werehause managment
     public void werehouseMange(Button thisBtn);
+    
+    // to get werehouseMange website
+    public void getWebSite(Button thisBtn);
 
 }

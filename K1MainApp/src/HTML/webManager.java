@@ -27,7 +27,7 @@ public class webManager {
         // init webBrowser
         we = wv.getEngine();
         we.setJavaScriptEnabled(true);
-        //wv.setContextMenuEnabled(false);
+        wv.setContextMenuEnabled(false);
 
         we.getLoadWorker().stateProperty().addListener(new webEngineListener());
 
@@ -41,6 +41,8 @@ public class webManager {
 
         we.setOnStatusChanged(new onStatusChanges());
 
+        we.setCreatePopupHandler(new pubUpnewWindowsHandler());
+        
         java.net.CookieHandler.setDefault(new java.net.CookieManager());
         
         

@@ -2,7 +2,6 @@ package HTML;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.scene.control.ProgressBar;
 
 public class webEngineProgress extends webManager implements ChangeListener<Number> {
 
@@ -10,7 +9,6 @@ public class webEngineProgress extends webManager implements ChangeListener<Numb
 
     @Override
     public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-        
         try {
             super.setProgressValue((double) newValue);
         } catch (Exception ex) {

@@ -7,6 +7,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import windowsStages.printBill;
 
 /**
  *
@@ -64,21 +65,6 @@ public class JavaBridge {
 
     }
 
-    /**
-     *
-     * @return
-     */
-    public String getLink_() {
-
-        try {
-            String apiLink =new propsHandel().getProp("APIlink");
-            return apiLink;
-        } catch (Exception ex) {
-            System.out.println("Class name : " + getClass().getName() + ", Message : " + ex.getMessage());
-        }
-        return "";
-    }
-
     // To send and get data from Server by selecting wich method i wont
     /**
      *
@@ -127,4 +113,19 @@ public class JavaBridge {
         statusBar.fillProperty().setValue(Color.valueOf(color));
     }
 
+    /**
+     *
+     *
+     */
+    public void showParcodePrinter() {
+        
+    }
+
+    /**
+     *
+     *
+     */
+    public void showBillPrinter() {
+        
+    }
 }

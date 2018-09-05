@@ -5,6 +5,7 @@
  */
 package k1mainapp;
 
+import HTML.JavaBridge;
 import java.awt.Desktop;
 import java.io.IOException;
 import javafx.application.Application;
@@ -20,19 +21,15 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class K1MainApp extends Application {
+    private static JavaBridge bridg;
 
-    static Stage stage;
 
-    public static Stage getStage() {
-        return stage;
-    }
-
-    public static void setStage(Stage stage) {
-        K1MainApp.stage = stage;
-    }
 
     @Override
     public void start(Stage stage) throws Exception {
+
+        JavaBridge bridg_ = new JavaBridge();
+        setBridg(bridg_);
         try {
             //stage.setFullScreen(true);
 
@@ -85,4 +82,21 @@ public class K1MainApp extends Application {
         return grid;
     }
 
+        public static JavaBridge getBridg() {
+        return bridg;
+    }
+
+    public static void setBridg(JavaBridge bridg) {
+        K1MainApp.bridg = bridg;
+    }
+    
+    static Stage stage;
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        K1MainApp.stage = stage;
+    }
 }

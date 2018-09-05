@@ -5,8 +5,13 @@
  */
 package HTML;
 
+import javafx.scene.Scene;
 import javafx.scene.web.PopupFeatures;
 import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
 /**
@@ -14,11 +19,24 @@ import javafx.util.Callback;
  * @author ahmad
  */
 public class pubUpnewWindowsHandler implements Callback<PopupFeatures, WebEngine> {
-
+    
     @Override
     public WebEngine call(PopupFeatures param) {
-        System.out.println("pagepubup");
-        return new WebEngine();
-    }
+        
+        Stage stage = new Stage(StageStyle.UTILITY);
+        stage.setResizable(false);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        
+        
+        
+        stage.initOwner(k1mainapp.K1MainApp.getStage());
+        
+        WebView wv2 = new WebView();
 
+        stage.setScene(new Scene(wv2));
+        stage.show();
+        return wv2.getEngine();
+        
+    }
+    
 }

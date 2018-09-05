@@ -8,7 +8,6 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import netscape.javascript.JSObject;
 
-
 /**
  *
  * @author ahmad
@@ -21,7 +20,6 @@ public class webManager {
 
     private static WebView wv;
     private static WebEngine we;
-    final JavaBridge bridg = new JavaBridge();
 
     public webManager(WebView wv, WebEngine we) {
         // init webBrowser
@@ -42,15 +40,12 @@ public class webManager {
         we.setOnStatusChanged(new onStatusChanges());
 
         we.setCreatePopupHandler(new pubUpnewWindowsHandler());
-        
+
         java.net.CookieHandler.setDefault(new java.net.CookieManager());
-        
-        
 
         we.setUserAgent("kkkk");
-        
-        we.load("http://k1computer.de/newapp/external.php");
-        
+
+
         webManager.wv = wv;
         webManager.we = we;
 
@@ -75,7 +70,7 @@ public class webManager {
     public boolean setJSobjectName(String jsName) {
         try {
             JSObject jsobject = (JSObject) we.executeScript(jsName);
-            jsobject.setMember("console", bridg);
+            jsobject.setMember("console", k1mainapp.K1MainApp.getBridg());
             return true;
         } catch (Exception ex) {
             String name = new Object() {

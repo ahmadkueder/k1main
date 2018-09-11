@@ -1,7 +1,6 @@
 {
     "mainSceneItems": {
-        "Buttons": [
-            {
+        "Buttons": [{
                 "name": "Users Managment",
                 "id": "userMang",
                 "listenerName": "userMang",
@@ -32,8 +31,7 @@
     "leftSectionItems": {
         "userMang": {
             "sectionType": "",
-            "items": [
-                {
+            "items": [{
                     "name": "",
                     "id": "addUser",
                     "listinerName": "addUserForm",
@@ -48,7 +46,7 @@
                     "icon": "LIST_ALT",
                     "fromName": "",
                     "hint": "Existierende Benutzer"
-                }, 
+                },
                 {
                     "name": "",
                     "id": "setingUsers",
@@ -61,28 +59,32 @@
         },
         "productsMange": {
             "sectionType": "",
-            "items": [
-                {
-                    "name": "",
-                    "id": "addProduct",
-                    "listinerName": "",
-                    "icon": "PLUS",
-                    "fromName": "",
-                    "hint": ""
-                },{
-                    "name": "",
-                    "id": "existProducts",
-                    "listinerName": "",
-                    "icon": "LIST_ALT",
-                    "fromName": "",
-                    "hint": ""
-                }
-            ]
+            "items": [{
+                "name": "",
+                "id": "addProduct",
+                "listinerName": "",
+                "icon": "PLUS",
+                "fromName": "",
+                "hint": ""
+            }, {
+                "name": "",
+                "id": "existProducts",
+                "listinerName": "",
+                "icon": "LIST_ALT",
+                "fromName": "",
+                "hint": ""
+            },{
+                "name": "",
+                "id": "printBill",
+                "listinerName": "printBill",
+                "icon": "FILE",
+                "fromName": "",
+                "hint": "print"
+            }]
         },
         "werehouseMange": {
             "sectionType": "",
-            "items": [
-                {
+            "items": [{
                     "name": "",
                     "id": "addWerehouse",
                     "listinerName": "",
@@ -104,14 +106,14 @@
     "databaseStroktur": {
         "databasName": "",
         "tables": [{
-                "tableName": "test",
-                "columns": {
-                    "id": {
-                        "type": "PRIM",
-                        "length": "",
-                        "addtional": ""
-                    }
+            "tableName": "test",
+            "columns": {
+                "id": {
+                    "type": "PRIM",
+                    "length": "",
+                    "addtional": ""
                 }
-            }]
+            }
+        }]
     }
 }

@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.BorderPane;
@@ -42,14 +43,19 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private ProgressBar prog;
+    @FXML
+    private Button clearCookies;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
-
             topBtnsContainer.setContent(new topBtns().printTopElements());
             webManager wm = new webManager(center, eng);
-
+            clearCookies.setOnAction(e -> {
+                java.net.CookieManager manager = new java.net.CookieManager();
+                java.net.CookieHandler.setDefault(manager);
+                manager.getCookieStore().removeAll();
+            });
         } catch (Exception ex) {
             String name = new Object() {
             }.getClass().getEnclosingMethod().getName();
